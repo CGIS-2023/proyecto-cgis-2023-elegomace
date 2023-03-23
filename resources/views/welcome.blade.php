@@ -145,7 +145,7 @@
                         <div class="p-6">
                             <div class="flex items-center">
                                 <div class="text-lg leading-7 font-semibold text-center block" style="width: 100%">
-                                    <a target="_blank" href="https://github.com/CGIS-2023/proyecto-cgis-2023-elegomace/" class="underline text-gray-900 dark:text-white">Proyecto Elena Gómez 22/23</a>
+                                    <a target="_blank" href="https://github.com/CGIS-2023/proyecto-cgis-2023-elegomace" class="underline text-gray-900 dark:text-white">Proyecto Elena Gómez Acevedo 22/23</a>
                                 </div>
                             </div>
 
