@@ -19,17 +19,17 @@ class MedicoSeeder extends Seeder
             [
                 'telefono' => 40000,
                 'user_id' => 2,
-                'name' => 'Medico1',
-                'num_licenciado' => 22222
-                'apellido' => 'Gomez'
+                'name' => 'Médico 1',
+                'num_licenciado' => 22222,
+                'surname' => 'Gomez',
             ],
             [
     
                 'telefono' => 4033333,
                 'user_id' => 3,
-                'name' => 'Medico2',
-                'num_licenciado' => 76222
-                'apellido' => 'Gomez'
+                'name' => 'Médico 2',
+                'num_licenciado' => 76222,
+                'surname' => 'Gomez',
 
             ],
         ]);

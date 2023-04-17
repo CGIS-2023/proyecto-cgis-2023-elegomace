@@ -46,7 +46,7 @@ FRQ-012 -> Borrar informes
 NFR-001 -> Política de privacidad
 NFR-002 -> Usabilidad
 ## 7.UML
-![imagen1!](C:\Users\egoma\OneDrive\Escritorio\UML.jpeg)
+![imagen2!](C:\Users\egoma\OneDrive\Escritorio\UML.jpeg)
 ## Herramienta para escribir lenguaje de marcado
 https://www.markdownguide.org/basic-syntax/ describe cómo se utiliza el markdown.
 

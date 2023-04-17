@@ -31,7 +31,7 @@
                         <tbody class="text-gray-600 text-sm font-light">
 
                             @foreach ($medicos as $medico)
-                            <tr class="border-b {{$medico->vacunado ? 'bg-green-50 hover:bg-green-100' : 'bg-red-50 hover:bg-red-100'}} border-gray-200">
+                            <tr class="border-b border-gray-200">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$medico->id}}</span>
@@ -39,12 +39,12 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$medico->user->name}}</span>
+                                        <span class="font-medium">{{$medico->name}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$medico->user->surname}}</span>
+                                        <span class="font-medium">{{$medico->surname}}</span>
                                     </div>
                                 </td>
                                 
