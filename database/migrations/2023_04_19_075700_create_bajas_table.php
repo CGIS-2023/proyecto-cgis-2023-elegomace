@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('empresas', function (Blueprint $table) {
+        Schema::create('bajas', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nombre');
-            $table->string('sector');
+            $table->dateTime('fecha_hora');
             $table->foreignId('medico_id')->constrained()->onDelete('cascade');
             $table->foreignId('paciente_id')->constrained()->onDelete('cascade');
         });
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('empresas');
+        Schema::dropIfExists('bajas');
     }
 };

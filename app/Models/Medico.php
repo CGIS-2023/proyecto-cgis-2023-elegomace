@@ -18,9 +18,9 @@ class Medico extends Model
 
     /**public function informes(){
         return $this->hasMany(Informe::class);
-    }
+    } */
 
     public function pacientes(){
-        return $this->hasManyThrough(Paciente::class, Informe::class);
-    } */
+        return $this->hasMany(Paciente::class);
+    }
 }

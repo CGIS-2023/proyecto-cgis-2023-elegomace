@@ -12,30 +12,32 @@ class MedicoPolicy
 
     public function viewAny(User $user)
     {
+        //return $user->tipo_usuario_id == 1; //no se porque es 3, pienso que es 1
         return true;
     }
 
     
      public function view(User $user, Medico $medico)
     {
-        return $user;
+        //return $user->tipo_usuario_id == 1;
+        return true;
     }
 
     public function create(User $user)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
     }
 
     
     public function update(User $user, Medico $medico)
     {
-        return true;
+        return $user->tipo_usuario_id == 3 || $medico->id == $user->medico_id;
     }
 
 
     public function delete(User $user, Medico $medico)
     {
-        return true;
+        return $user->tipo_usuario_id == 3;
     }
     public function __construct()
     {

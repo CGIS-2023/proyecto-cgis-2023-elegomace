@@ -31,6 +31,9 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        if(in_array(Auth::user()->tipo_usuario_id, [1])){
+            return redirect()->route('medicos.index');
+        }
 
         return redirect()->intended(RouteServiceProvider::HOME);
     }

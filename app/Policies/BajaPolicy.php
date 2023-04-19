@@ -2,11 +2,11 @@
 
 namespace App\Policies;
 
-use App\Models\Empresa;
+use App\Models\Baja;
 use App\Models\User;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
-class EmpresaPolicy
+class BajaPolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class EmpresaPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Empresa  $empresa
+     * @param  \App\Models\Baja  $baja
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, Empresa $empresa)
+    public function view(User $user, Baja $baja)
     {
         return true;
     }
@@ -48,10 +48,10 @@ class EmpresaPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Empresa  $empresa
+     * @param  \App\Models\Baja  $baja
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, Empresa $empresa)
+    public function update(User $user, Baja $baja)
     {
         return true;
     }
@@ -60,10 +60,10 @@ class EmpresaPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Empresa  $empresa
+     * @param  \App\Models\Baja  $baja
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, Empresa $empresa)
+    public function delete(User $user, Baja $baja)
     {
         return true;
     }
@@ -72,10 +72,10 @@ class EmpresaPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Empresa  $empresa
+     * @param  \App\Models\Baja  $baja
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, Empresa $empresa)
+    public function restore(User $user, Baja $baja)
     {
         return true;
     }
@@ -84,10 +84,10 @@ class EmpresaPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\Empresa  $empresa
+     * @param  \App\Models\Baja  $baja
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, Empresa $empresa)
+    public function forceDelete(User $user, Baja $baja)
     {
         return true;
     }
