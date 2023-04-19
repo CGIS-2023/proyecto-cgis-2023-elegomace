@@ -84,4 +84,26 @@ class BajaController extends Controller
         }
         return redirect()->route('bajas.index');
     }
+
+    public function attach_tipo(Request $request, Baja $baja)
+    {
+        $this->validateWithBag('attach',$request, [
+            //'tipo_id' => 'required|exists:medicos,id',
+            'inicio' => 'required|date',
+            'fin' => 'required|date|after:inicio',
+            'comentarios' => 'nullable|string',
+        ]);
+        $baja->tipos()->attach($request->tipo_id, [
+            'inicio' => $request->inicio,
+            'fin' => $request->fin,
+            'comentarios' => $request->comentarios,
+        ]);
+        return redirect()->route('bajas.edit', $baja->id);
+    }
+
+    public function detach_tipo(Baja $baja, Tipo $tipo)
+    {
+        $baja->tipos()->detach($tipo->id);
+        return redirect()->route('bajas.edit', $baja->id);
+    }
 }
