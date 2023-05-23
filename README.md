@@ -1,24 +1,53 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10325111&assignment_repo_type=AssignmentRepo)
-# Plantilla de proyecto CGIS
+# Proyecto CGIS
 
-Esta es una descripción por defecto de **ProyectoPrueba**. Aquí deberá aparecer la descripción que también aparezca en el documento
+Esta es la segunda versión del documento de requisitos correspondiente con el  **Entregable 2**. 
 
+## Índice
+1. Dominio del problema
+2. Objetivos
+3. Roles 
+4. Requisitos de información
+5. Requisitos funcionales
+6. Requisitos no funcionales
+7. Diagrama UML
 
-## Instrucciones para su uso
-1. Clone desde Visual Studio Code (o cualquier IDE de su preferencia) este repositorio.
-2. Necesitamos un archivo de entorno `.env` para que nuestra aplicación sepa cómo conectarse a la base de datos y otros parámetros de configuración. Sin embargo, como el archivo `.env` contiene información sensible, como contraseñas, y la configuración depende del equipo, no se suele subir al repositorio (poniendo en `.gitignore` el archivo para que Git no lo considere). En su lugar, hemos subido un ejemplo `.env.example` con valores de ejemplo para los diferentes parámetros. En este caso, los valores de ejemplo son exactamente los mismos que necesitamos para trabajar con sail, así que tendremos que duplicar el archivo `.env.example`, copiándolo y pegándolo en el mismo directorio, y llamándolo `.env`
-3. Arrancamos el contenedor de Sail por primera vez `docker run --rm \
-   -u "$(id -u):$(id -g)" \
-   -v $(pwd):/var/www/html \
-   -w /var/www/html \
-   laravelsail/php81-composer:latest \
-   composer install --ignore-platform-reqs`. Más info: https://laravel.com/docs/master/sail#installing-composer-dependencies-for-existing-projects.
-4. Ahora que tenemos disponible la carpeta de vendor, levante Laravel Sail desde Window Terminal (el terminal de la máquina Host Linux) `./vendor/bin/sail up -d` o `sail up -d` si ha realizado el alias de bash.
-5. Abra en el navegador `http://localhost`
+## 1. Dominio del problema
+Las cifras de trabajadores que se ausentan de sus puestos de trabajo debido a periodos de incapacidad temporal en nuestra comunidad son muy altas. Según la página del SAS: **La baja laboral debe entenderse como una decisión clínica, siendo por tanto el médico de familia el responsable directo de su gestión**, tanto si la baja se debe a contingencias comunes (enfermedad común y accidente no laboral) o contingencias profesionales (enfermedad profesional y accidente de trabajo).
+Estas son las estadísticas de Andalucía:
+![img1](https://user-images.githubusercontent.com/126060520/233026245-27b18ae0-c97a-44ed-b119-32ec6c38689e.jpg)
 
-Recuerde que los comandos como `php artisan xxx` que vea en la documentación, deberán realizarse con `./vendor/bin/sail artisan comandoAEjecutar` o `sail artisan comandoAEjecutar` si ha activado el alias en bash, ya necesitan el entorno de desarrollo con MySQL, PHP, etc., que se encuentra en el contenedor de Sail. Si no, siempre podrá asociar un terminal directamente desde VSCode al contenedor de Sail para otras operaciones que deban ejecutarse en el servidor web que corre dentro del contenedor.
-
-Cuando termine de trabajar, ejecute `./vendor/bin/sail down` o `sail down` si ha activado el alias en bash para parar la ejecución del contenedor. Recuerde que para volver a encenderlo necesitará ejecutar `./vendor/bin/sail up -d` o `sail up -d ` si ha activado el alias en bash desde el terminal de la máquina Host (Linux).
+Debido a que estas bajas de trabajadores deben ser gestionadas por los médicos de cabecera y esto conlleva revisiones semanales o mensuales (normalmente semanales) acompañadas de un informe que el paciente debe entregar posteriormente en la empresa en la que se esta ausentando, un proceso que se repite hasta el fin de la incapacidad y mientras que esta sea menor de 12 meses (cuando supera esta fecha pasa a manos de la INSS). 
+## 2. Objetivos
+Esta situación lleva a plantear una posible solución al mantenimiento, creación y distribución de los informes mencionados, recogiendo todas las características necesarias, aligerando los tiempos, aumentando la efectividad, y por consiguiente informatizando procesos que todavía se llevan a cabo manualmente por personales del sector sanitario que ya están suficientemente abrumados y saturados por la situación de la sanidad pública. Este sistema que se plantea a continuación recoge ciertas características que beneficiaría a todos los usuarios de este, incluidas las empresas, ya que llevarían un control más exhaustivo de los trabajadores incapacitados temporalmente facilitando también las inspecciones que intentan evitar el abuso de los tiempos de baja que ocurren con mucha frecuencia.
+## 3. Roles
+- Administrador del sistema
+- Médico de familia
+- Paciente/Trabajador
+- Empresa o entidad a la que pertenece el trabajador
+## 4. Requisitos de información
+IRQ-001 -> Información sobre el paciente
+IRQ-002 -> Información sobre la baja (incapacidad laboral)
+IRQ-003 -> Información sobre el médico
+IRQ-004 -> Información sobre la empresa o la entidad
+## 5. Requisitos funcionales
+FRQ-001 -> Crear pacientes
+FRQ-002 -> Modificar pacientes
+FRQ-003 -> Listar pacientes
+FRQ-004 -> Borrar pacientes
+FRQ-005 -> Crear médicos
+FRQ-006 -> Modificar médicos
+FRQ-007 -> Listar médicos
+FRQ-008 -> Borrar médicos
+FRQ-009 -> Crear informes
+FRQ-010 -> Modificar informes
+FRQ-011 -> Listar informes
+FRQ-012 -> Borrar informes
+## 6. Requisitos no funcionales 
+NFR-001 -> Política de privacidad
+NFR-002 -> Usabilidad
+## 7.UML
+![UML](https://user-images.githubusercontent.com/126060520/233026190-3f5e7193-29fe-4233-b776-fa0bc5305e60.jpg)
 
 ## Herramienta para escribir lenguaje de marcado
 https://www.markdownguide.org/basic-syntax/ describe cómo se utiliza el markdown.

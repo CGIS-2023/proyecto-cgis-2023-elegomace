@@ -41,4 +41,33 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function medico()
+    {
+        return $this->hasOne(Medico::class);
+    }
+
+    public function paciente()
+    {
+        return $this->hasOne(Paciente::class);
+    }
+
+    //añadir empresa
+
+    public function getTipoUsuarioIdAttribute(){
+        if ($this->medico()->exists()){
+            return 1;
+        }
+        elseif($this->paciente()->exists()){
+            return 2;
+        }
+        else{
+            return 3; //empresa
+        }
+    }
+
+    public function getTipoUsuarioAttribute(){
+        $tipos_usuario = [1 => trans('Médico'), 2 => trans('Paciente'), 3 => trans('Empresa')];
+        return $tipos_usuario[$this->tipo_usuario_id];
+    }
 }
